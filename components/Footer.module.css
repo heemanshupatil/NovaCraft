@@ -1,0 +1,75 @@
+.footer {
+  position: relative; overflow: hidden;
+  background: #0F172A;
+  border-top: 1px solid #1E293B;
+  padding-top: 80px;
+}
+.glow {
+  position: absolute; top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 600px; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(59,130,246,0.5), transparent);
+}
+.top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.2fr;
+  gap: 48px;
+  padding-bottom: 64px;
+}
+.brand { display: flex; flex-direction: column; gap: 16px; }
+.logo { font-size: 1.8rem; font-weight: 800; letter-spacing: -0.03em; }
+.logoText { color: #F1F5F9; }
+.logoAccent {
+  background: linear-gradient(135deg, #3B82F6, #60A5FA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.brandDesc { font-size: 0.875rem; color: #94A3B8; line-height: 1.7; max-width: 280px; }
+.socials { display: flex; gap: 10px; }
+.social {
+  width: 38px; height: 38px; border-radius: 10px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  display: flex; align-items: center; justify-content: center;
+  color: #94A3B8; transition: all 0.3s ease;
+}
+.social:hover { background: rgba(59,130,246,0.2); border-color: rgba(59,130,246,0.4); color: #93C5FD; }
+.heading {
+  font-size: 0.82rem; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: #F1F5F9; margin-bottom: 20px;
+}
+.list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.link {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 0.875rem; color: #94A3B8;
+  text-decoration: none; transition: color 0.3s ease;
+}
+.link:hover { color: #60A5FA; }
+.bottom {
+  border-top: 1px solid #1E293B;
+  padding: 24px 0;
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 0.8rem; color: #475569;
+  flex-wrap: wrap; gap: 8px;
+}
+@media (max-width: 1024px) {
+  .top { grid-template-columns: 1fr 1fr; }
+  .brand { grid-column: 1 / -1; }
+}
+@media (max-width: 640px) {
+  .top { grid-template-columns: 1fr; }
+  .brand { grid-column: unset; }
+  .bottom { flex-direction: column; text-align: center; }
+}
+
+.privacyLink {
+  color: #94A3B8;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  margin-left: 12px;
+}
+.privacyLink:hover {
+  color: #60A5FA;
+  text-decoration: underline;
+}

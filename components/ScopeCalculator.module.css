@@ -1,0 +1,394 @@
+.calculatorCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 40px;
+  margin-top: 60px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+}
+
+.header {
+  margin-bottom: 30px;
+}
+.header h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text);
+  margin-top: 8px;
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+.header p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+.headerIcon {
+  color: var(--primary);
+}
+
+.categorySelector {
+  display: flex;
+  gap: 10px;
+  background: var(--bg-2);
+  padding: 6px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  width: fit-content;
+}
+.selectBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.selectBtn:hover {
+  color: var(--text);
+}
+.btnActive {
+  background: var(--surface);
+  color: var(--primary) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.gridSplit {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.controlsSide {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.controlGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.groupLabel {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+/* Slider */
+.sliderHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.badgeVal {
+  font-size: 0.82rem;
+  font-weight: 700;
+  background: rgba(29, 78, 216, 0.1);
+  color: var(--primary);
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+.rangeSlider {
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--bg-3);
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+.rangeSlider::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--primary);
+  box-shadow: 0 0 10px rgba(29, 78, 216, 0.3);
+  transition: transform 0.1s;
+}
+.rangeSlider::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+.sliderLimits {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+/* Checkcards */
+.checkboxGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.checkCard {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.checkCard:hover {
+  border-color: var(--border-hover);
+  background: var(--bg-3);
+}
+.checkCardActive {
+  border-color: var(--primary) !important;
+  background: rgba(29, 78, 216, 0.03) !important;
+}
+.checkSquare {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s;
+}
+.checkCardActive .checkSquare {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+.checkCardDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.checkCardLabel {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text);
+}
+.checkCardPrice {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+/* Timeline Priority Radio cards */
+.radioGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.radioCard {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.radioCard:hover {
+  background: var(--bg-3);
+}
+.radioCardActive {
+  border-color: var(--primary) !important;
+  background: rgba(29, 78, 216, 0.03) !important;
+}
+.radioDot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  position: relative;
+  flex-shrink: 0;
+}
+.radioCardActive .radioDot {
+  border-color: var(--primary);
+}
+.radioCardActive .radioDot::after {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--primary);
+}
+.radioLabel {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text);
+}
+.radioDesc {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-top: 1px;
+}
+
+/* Right side output card */
+.estimateSide {
+  position: sticky;
+  top: 120px;
+}
+.estimateSummaryBox {
+  background: linear-gradient(135deg, var(--bg-2), var(--bg-3));
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+.estCategoryTitle {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.priceContainer {
+  display: flex;
+  align-items: baseline;
+  color: var(--text);
+}
+.currencySign {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-right: 2px;
+}
+.priceAmt {
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+.pricePeriod {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-left: 4px;
+}
+
+.metricItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 16px;
+}
+.metricIcon {
+  color: var(--primary);
+  flex-shrink: 0;
+}
+.metricLabel {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+.metricValue {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.selectedScopeWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.scopeHeader {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+.scopeList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 180px;
+  overflow-y: auto;
+}
+.scopeListItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.actionsBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.calcCheckoutBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  font-weight: 700;
+}
+.calcShareBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  font-weight: 700;
+  border-color: var(--border);
+}
+
+.calcTaxesNotice {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+.calcTaxesNotice svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* Responsive options */
+@media (max-width: 991px) {
+  .gridSplit {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .estimateSide {
+    position: static;
+  }
+}
+@media (max-width: 600px) {
+  .calculatorCard {
+    padding: 24px;
+  }
+  .checkboxGrid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,204 @@
+.nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  z-index: 1000;
+  padding: 20px 0;
+  transition: all 0.4s ease;
+}
+.scrolled {
+  padding: 12px 0;
+  background: var(--surface);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+.inner {
+  display: flex; align-items: center; justify-content: space-between;
+}
+.logo {
+  font-size: 1.6rem; font-weight: 800; letter-spacing: -0.03em;
+  text-decoration: none;
+  position: relative;
+  z-index: 1100;
+}
+.logoText { color: var(--text); }
+.logoAccent {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.links {
+  display: flex; align-items: center; gap: 4px;
+}
+.link {
+  position: relative;
+  padding: 8px 16px;
+  color: var(--text-muted);
+  font-size: 0.9rem; font-weight: 500;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+.link:hover, .active { color: var(--text); }
+.linkUnderline {
+  position: absolute; bottom: 4px; left: 16px; right: 16px;
+  height: 2px;
+  background: var(--gradient);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.3s ease;
+  border-radius: 1px;
+}
+.link:hover .linkUnderline, .active .linkUnderline { transform: scaleX(1); }
+.hamburger {
+  display: none;
+  color: var(--text);
+  padding: 8px;
+  background: var(--bg-3);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  position: relative;
+  z-index: 1100;
+}
+.mobileCloseBtn {
+  display: none;
+}
+
+/* ── Auth: Login button ─────────────────────────────────── */
+.loginBtn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 9px 18px; border-radius: 9999px;
+  font-size: 0.875rem; font-weight: 600;
+  color: var(--primary); border: 1.5px solid var(--border);
+  background: var(--surface);
+  text-decoration: none; transition: all 0.25s;
+}
+.loginBtn:hover { background: var(--surface-hover); border-color: var(--primary); }
+.loginBtnAlt {
+  background: transparent;
+  border-color: var(--border);
+  color: var(--text-muted);
+}
+.loginBtnAlt:hover { background: var(--surface-hover); border-color: var(--text-muted); color: var(--text); }
+
+/* ── Auth: User avatar + dropdown ───────────────────────── */
+.userMenu { position: relative; }
+.avatarBtn {
+  display: flex; align-items: center; gap: 8px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 9999px; padding: 5px 14px 5px 6px;
+  cursor: pointer; transition: all 0.25s;
+  font-family: inherit;
+}
+.avatarBtn:hover { border-color: var(--primary); background: var(--surface-hover); }
+.avatarCircle {
+  width: 30px; height: 30px; border-radius: 50%;
+  background: var(--gradient);
+  display: flex; align-items: center; justify-content: center;
+  color: white; font-size: 0.8rem; font-weight: 700;
+}
+.avatarName { font-size: 0.85rem; font-weight: 600; color: var(--text); }
+
+.dropdown {
+  position: absolute; top: calc(100% + 10px); right: 0;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 14px; padding: 8px;
+  min-width: 200px;
+  box-shadow: var(--shadow-lg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 2000;
+  animation: dropIn 0.2s ease;
+}
+.dropdown::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 0;
+  right: 0;
+  height: 12px;
+  background: transparent;
+}
+.dropEmail {
+  padding: 6px 10px 10px;
+  font-size: 0.75rem; color: var(--text-dim);
+  border-bottom: 1px solid var(--border); margin-bottom: 4px;
+}
+.dropItem {
+  display: flex; align-items: center; gap: 9px;
+  padding: 10px 10px; border-radius: 8px;
+  font-size: 0.875rem; font-weight: 500; color: var(--text-muted);
+  text-decoration: none; cursor: pointer;
+  background: none; border: none; width: 100%; text-align: left;
+  font-family: inherit; transition: background 0.2s;
+}
+.dropItem:hover { background: var(--surface-hover); color: var(--text); }
+.dropLogout { color: #DC2626 !important; }
+.dropLogout:hover { background: rgba(220, 38, 38, 0.1) !important; }
+
+/* ── Theme Switcher Button ──────────────────────────────── */
+.themeToggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-right: 8px;
+}
+.themeToggle:hover {
+  color: var(--primary);
+  border-color: var(--primary);
+  background: var(--surface-hover);
+  transform: rotate(15deg);
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.2);
+}
+
+@keyframes dropIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .hamburger { display: flex; align-items: center; justify-content: center; }
+  .links {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    gap: 8px; padding: 24px;
+    z-index: 1000;
+  }
+  .links.open { display: flex; }
+  .link { font-size: 1.4rem; padding: 12px; text-align: center; width: 100%; color: var(--text); }
+  .dropdown { position: fixed; top: auto; bottom: 80px; right: 20px; left: 20px; }
+  
+  .mobileCloseBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--bg-3);
+    border: 1px solid var(--border);
+    border-radius: 9999px;
+    padding: 10px 20px;
+    color: var(--text);
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-bottom: 28px;
+    transition: all 0.2s ease;
+  }
+  .mobileCloseBtn:hover {
+    background: var(--border);
+  }
+}

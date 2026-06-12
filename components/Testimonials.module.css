@@ -1,0 +1,68 @@
+.section { position: relative; overflow: hidden; background: var(--bg-2); }
+.bg {
+  position: absolute; inset: 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 48px;
+  box-shadow: var(--shadow-md);
+  text-align: center;
+  position: relative; z-index: 2;
+  animation: fadeIn 0.5s ease;
+}
+.stars { display: flex; justify-content: center; gap: 4px; margin-bottom: 28px; }
+.quote {
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  font-style: italic;
+  color: var(--text);
+  line-height: 1.75;
+  max-width: 680px;
+  margin: 0 auto 36px;
+}
+.author { display: flex; align-items: center; justify-content: center; gap: 16px; }
+.avatar { font-size: 2.5rem; }
+.name { font-weight: 700; font-size: 1rem; color: var(--text); }
+.role { font-size: 0.85rem; color: var(--text-muted); }
+.controls {
+  display: flex; align-items: center; justify-content: center; gap: 20px;
+  margin-top: 32px; position: relative; z-index: 2;
+}
+.btn {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--surface); border: 1px solid var(--border);
+  color: var(--text-muted);
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.3s ease; cursor: pointer;
+  box-shadow: var(--shadow-sm);
+}
+.btn:hover { background: var(--surface-hover); border-color: var(--primary); color: var(--primary); }
+.dots { display: flex; gap: 8px; }
+.dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--border); transition: all 0.3s ease;
+  cursor: pointer; border: none;
+}
+.dotActive { background: var(--primary); width: 24px; border-radius: 4px; }
+.avatarCircle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  border: 2px solid var(--border);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

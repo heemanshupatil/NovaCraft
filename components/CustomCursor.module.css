@@ -1,0 +1,30 @@
+.dot {
+  position: fixed;
+  width: 8px; height: 8px;
+  background: #06B6D4;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  transition: width 0.2s, height 0.2s, background 0.2s;
+  top: 0; left: 0;
+  will-change: transform;
+}
+.ring {
+  position: fixed;
+  width: 40px; height: 40px;
+  border: 1.5px solid rgba(124,58,237,0.6);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99998;
+  top: 0; left: 0;
+  will-change: transform;
+  transition: width 0.25s, height 0.25s, border-color 0.25s;
+}
+.dotExpand {
+  width: 12px; height: 12px;
+  background: #7C3AED;
+}
+.ringExpand {
+  width: 56px; height: 56px;
+  border-color: rgba(6,182,212,0.8);
+}

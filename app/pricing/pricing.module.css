@@ -1,0 +1,209 @@
+.hero {
+  padding: 160px 0 60px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(160deg, var(--bg-3) 0%, var(--bg) 60%, var(--bg-2) 100%);
+  transition: background 0.3s ease;
+}
+.heroBg {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(29,78,216,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(29,78,216,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Tabs */
+.tabs {
+  display: inline-flex;
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: 9999px;
+  padding: 4px;
+  gap: 4px;
+}
+.tab {
+  padding: 10px 24px;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  background: transparent;
+}
+.tabActive {
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Plans grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+/* Plan card */
+.card {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 20px;
+  padding: 36px;
+  position: relative;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.card:hover {
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+.highlighted {
+  border-color: var(--primary);
+  box-shadow: var(--shadow-blue);
+  transform: scale(1.03);
+}
+.highlighted:hover {
+  transform: scale(1.03) translateY(-4px);
+  box-shadow: 0 20px 60px rgba(29,78,216,0.25);
+}
+
+/* Badge */
+.badge {
+  position: absolute;
+  top: -14px; left: 50%;
+  transform: translateX(-50%);
+  background: var(--gradient);
+  color: white;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 5px 16px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+  letter-spacing: 0.04em;
+}
+
+/* Card top */
+.cardTop { display: flex; flex-direction: column; gap: 12px; }
+.planName {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+.price {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+.currency {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1;
+}
+.amount {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+.dur {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  font-weight: 500;
+  align-self: flex-end;
+  padding-bottom: 4px;
+}
+.desc {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+/* Features */
+.features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  flex: 1;
+}
+.feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.875rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+.check {
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--primary);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.checkHighlight {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+
+/* CTA button */
+.cta {
+  width: 100%;
+  justify-content: center;
+  margin-top: auto;
+}
+
+/* Note */
+.note {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.82rem;
+  color: var(--text-dim);
+}
+
+/* Trust strip */
+.trustGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+.trustCard {
+  text-align: center;
+  padding: 24px 16px;
+}
+.trustIcon { font-size: 2rem; margin-bottom: 12px; }
+.trustTitle {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+.trustDesc { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; }
+
+@media (max-width: 1024px) {
+  .grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+  .highlighted { transform: scale(1); }
+  .trustGrid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .trustGrid { grid-template-columns: 1fr; }
+  .tabs { flex-direction: column; border-radius: 16px; }
+  .tab { border-radius: 12px; }
+}
